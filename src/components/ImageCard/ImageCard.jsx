@@ -18,7 +18,7 @@ function ImageCard({ img, clickImg }) {
           img.urls.small + settingsImg.scrcSet.img1x + settingsImg.format
         } 1x,
                 ${
-                  img.urls.medium +
+                  img.urls.small +
                   settingsImg.scrcSet.img2x +
                   settingsImg.format
                 } 2x
