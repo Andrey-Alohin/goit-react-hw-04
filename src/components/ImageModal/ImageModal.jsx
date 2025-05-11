@@ -18,11 +18,10 @@ const customStyles = {
     zIndex: 1000,
   },
 };
-Modal.setAppElement("#root");
 
 function ImageModal({
   isModalOpen,
-  modalInfo: { likes, description, alt, imgUrl, sourceLink, user },
+  modalInfo: { likes, description, alt, imgUrl, sourceLink, user = {} },
   closeModal,
 }) {
   return (
@@ -30,7 +29,7 @@ function ImageModal({
       isOpen={isModalOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel={`Full image of ${description}`}
+      contentLabel={`Full image of ${alt}`}
     >
       <div className={css.modalContainer}>
         <img
@@ -55,9 +54,7 @@ function ImageModal({
             />
             <h3 className={css.userName}>{user.name}</h3>
           </a>
-          <p className={css.description}>
-            {description ? description : "No desription"}
-          </p>
+          <p className={css.description}>{description || "No desription"}</p>
           <p className={css.likes}>
             <FcLike />
             {likes}

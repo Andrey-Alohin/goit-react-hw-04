@@ -6,6 +6,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { fetchImages } from "../../unsplash-api";
 import Loader from "../Loader/Loader";
 import ImageModal from "../ImageModal/ImageModal";
+import toast from "react-hot-toast";
 function App() {
   const [images, setImages] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -17,6 +18,10 @@ function App() {
   const [modalInfo, setModalInfo] = useState({});
 
   const searchImg = (newQuery) => {
+    if (newQuery.toLowerCase() === userQuery.toLowerCase()) {
+      toast.error("You allready search this query", { duration: 1000 });
+      return;
+    }
     setUserQuery(newQuery);
     setImages([]);
     setCurrentPage(1);
@@ -77,13 +82,11 @@ function App() {
         <LoadMoreBtn loadMore={loadMore} />
       )}
       {isError && <ErrorMessage />}
-      {isModalOpen && (
-        <ImageModal
-          isModalOpen={isModalOpen}
-          modalInfo={modalInfo}
-          closeModal={closeModal}
-        />
-      )}
+      <ImageModal
+        isModalOpen={isModalOpen}
+        modalInfo={modalInfo}
+        closeModal={closeModal}
+      />
     </>
   );
 }
