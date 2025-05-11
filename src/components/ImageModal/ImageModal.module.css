@@ -1,0 +1,70 @@
+.modalCotainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.originalImg {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.imageInfo {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.userImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #e63946;
+  margin-bottom: 12px;
+}
+
+.linkOriginal {
+  display: inline-block;
+  font-size: 14px;
+  color: #1e90ff;
+  text-decoration: underline;
+}
